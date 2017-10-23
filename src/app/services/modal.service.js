@@ -24,6 +24,10 @@ class ModalService {
     // });
     return modalInstance;
   }
+
+  closeModal(){
+    this.$uibModalInstance.close();
+  }
 }
 
 export default ModalService;

@@ -24,6 +24,10 @@ class ModalListenerService {
       data.size);
   }
 
+  cleseModal() {
+    this.modalService.closeModal();
+  }
+
   init() {
     this.registerListner();
     this.initService();
@@ -33,6 +37,11 @@ class ModalListenerService {
     this.socketService.on('openModal', (data) => {
       this.$log.debug('openModal', data);
       this.openModal(data);
+    });
+
+    this.socketService.on('closeModal', () => {
+      this.$log.debug('closeModal', '');
+      this.closeModal();
     });
   }
 
